@@ -1,0 +1,34 @@
+{
+  "name": "parse-rss",
+  "description": "parse rss feeds",
+  "version": "0.0.1",
+  "author": "nikezono",
+  "dependencies": {
+    "feedparser": "*",
+    "request": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*"
+  },
+  "keywords": [
+    "rss",
+    "feed",
+    "parse"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nikezono/node-parse-rss"
+  },
+  "main": "lib/parse-rss.js",
+  "scripts": {},
+  "engines": {
+    "node": "*"
+  },
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/nikezono/node-parse-rss/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
