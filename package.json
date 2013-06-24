@@ -21,7 +21,7 @@
   },
   "main": "lib/parse-rss.js",
   "scripts": {
-    "test": "cake test"
+    "test": "./node_modules/.bin/cake test"
   },
   "engines": {
     "node": "*"

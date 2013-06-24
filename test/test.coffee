@@ -11,6 +11,6 @@ geta6    = "http://blog.geta6.net/rss"
 
 describe "Parse", ->
   it "Parseできる", (done)->
-    parser apple,(rss)->\
+    parser apple, (rss) ->
       done()  if rss[0].title?
       
