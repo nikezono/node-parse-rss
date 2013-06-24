@@ -1,5 +1,6 @@
 node-parse-rss
 ---
+[![Build Status](https://travis-ci.org/[nikezono]/[node-parse-rss].png)](https://travis-ci.org/[nikezono]/[node-parse-rss])
 
 parse rss feeds in url
 
