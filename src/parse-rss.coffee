@@ -11,8 +11,6 @@ module.exports = (url,callback) ->
     addmeta   : true
     feedurl   : url
 
-  console.log "library loaded"
-
   rss = []
 
   request(url).pipe(new FeedParser([options])).on('error', (error)->
@@ -20,11 +18,7 @@ module.exports = (url,callback) ->
     console.error error
   ).on('readable', ->
     stream = this
-    if item = stream.read()
-      console.log "#{item.title} is added"
-      rss.push item 
-
+    rss.push item  if item = stream.read()
   ).on('end', ->
-    console.log "finished. length: #{rss.length}"
     callback rss
   )
