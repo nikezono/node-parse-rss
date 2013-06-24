@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git://github.com/nikezono/node-parse-rss"
   },
-  "main": "lib/parse-rss.js",
+  "main": "./lib/parse-rss.js",
   "scripts": {
     "test": "./node_modules/.bin/cake test"
   },
