@@ -17,13 +17,13 @@ wrapper of [feedparser](https://github.com/danmactough/node-feedparser)
 
 ##usage
     # Coffeescript
-    finder = require 'find-rss'
-    finder "http://www.apple.com/",(candidates)->
-      console.log candidates
+    parser = require 'parse-rss'
+    parse "http://www.apple.com/",(rss)->
+      console.log rss
 
       # =>
-      # [ { rel: 'alternate',
-            type: 'application/rss+xml',
-            title: 'RSS',
-            href: 'http://images.apple.com/main/rss/hotnews/hotnews.rss',
-            url: 'http://images.apple.com/main/rss/hotnews/hotnews.rss' } ]
+      # [ { title: 'Apple Launch new iPad...',
+            description: 'application/rss+xml',
+            meta: [Object],
+          },{},{}...]
+

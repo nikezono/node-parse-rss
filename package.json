@@ -20,7 +20,9 @@
     "url": "git://github.com/nikezono/node-parse-rss"
   },
   "main": "lib/parse-rss.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cake test"
+  },
   "engines": {
     "node": "*"
   },
