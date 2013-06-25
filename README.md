@@ -19,7 +19,7 @@ wrapper of [feedparser](https://github.com/danmactough/node-feedparser)
 ##usage
     # Coffeescript
     parser = require 'parse-rss'
-    parse "http://www.apple.com/",(rss)->
+    parser "http://www.apple.com/",(rss)->
       console.log rss
 
       # =>
