@@ -8,7 +8,9 @@
     "request": "*"
   },
   "devDependencies": {
-    "coffee-script": "*"
+    "coffee-script": "*",
+    "mocha":"*",
+    "assert":"*"
   },
   "keywords": [
     "rss",

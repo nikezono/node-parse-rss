@@ -1,6 +1,6 @@
 language: node_js
 before_install:
-  - npm install coffee-script  
+  - npm install coffee-script mocha
 before_script:
   - coffee -o ./lib -c -b ./src
 node_js:
