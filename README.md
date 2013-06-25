@@ -19,12 +19,15 @@ wrapper of [feedparser](https://github.com/danmactough/node-feedparser)
 ##usage
     # Coffeescript
     parser = require 'parse-rss'
-    parser "http://www.apple.com/",(rss)->
+    parser "http://images.apple.com/main/rss/hotnews/hotnews.rss",(rss)->
       console.log rss
 
       # =>
       # [ { title: 'Apple Launch new iPad...',
             description: 'application/rss+xml',
             meta: [Object],
-          },{},{}...]
+          },{
+            title:...
+            description:...
+            },{}...]
 
