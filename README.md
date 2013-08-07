@@ -1,8 +1,10 @@
 node-parse-rss
----
 [![Build Status](https://travis-ci.org/nikezono/node-parse-rss.png)](https://travis-ci.org/nikezono/node-parse-rss)
 
-parse rss feeds in url
+---
+
+[![NPM](https://nodei.co/npm/node-parse-rss.png)](https://nodei.co/npm/node-parse-rss/)
+rss feed parser
 
 wrapper of [feedparser](https://github.com/danmactough/node-feedparser)
 
@@ -19,7 +21,9 @@ wrapper of [feedparser](https://github.com/danmactough/node-feedparser)
 ##usage
     # Coffeescript
     parser = require 'parse-rss'
-    parser "http://images.apple.com/main/rss/hotnews/hotnews.rss",(rss)->
+    url    = "http://images.apple.com/main/rss/hotnews/hotnews.rss"
+    parser url, (err,rss)->
+      console.log err if err
       console.log rss
 
       # =>
