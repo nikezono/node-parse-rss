@@ -3,7 +3,8 @@ node-parse-rss
 
 ---
 
-[![NPM](https://nodei.co/npm/node-parse-rss.png)](https://nodei.co/npm/node-parse-rss/)
+[![NPM](https://nodei.co/npm/parse-rss.png)](https://nodei.co/npm/parse-rss/)
+
 rss feed parser
 
 wrapper of [feedparser](https://github.com/danmactough/node-feedparser)
