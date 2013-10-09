@@ -15,7 +15,7 @@ module.exports = (url,callback) ->
 
   request url, (error,res,body)->
     if error? or res?.statusCode isnt 200
-      return callback "request:#{url}, Error:#{error}",null 
+      return callback "request:#{url}, Error:#{error}",null
     else
       request(url).pipe(new FeedParser([options]))
       .on 'error', (error)->
@@ -24,5 +24,6 @@ module.exports = (url,callback) ->
         stream = this
         rss.push item  if item = stream.read()
       .on 'end', ->
+        callback 'no articles',null if rss.length is 0
         callback null,rss
-      
+
