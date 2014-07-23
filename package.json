@@ -1,15 +1,26 @@
 {
   "name": "parse-rss",
   "description": "parse rss feeds",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "nikezono",
   "dependencies": {
     "feedparser": "*",
     "request": "*"
   },
   "devDependencies": {
+    "coffee-errors": "^0.8.6",
     "coffee-script": "^1.7.1",
-    "mocha":"*"
+    "grunt": "^0.4.5",
+    "grunt-blanket": "0.0.8",
+    "grunt-coffeelint": "0.0.10",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-coveralls": "^0.3.0",
+    "grunt-mocha-test": "^0.11.0",
+    "grunt-notify": "^0.3.0",
+    "underscore": "^1.6.0"
   },
   "keywords": [
     "rss",
@@ -23,7 +34,7 @@
   },
   "main": "./lib/parse-rss.js",
   "scripts": {
-    "test": "cake test"
+    "test": "grunt test"
   },
   "engines": {
     "node": "*"
