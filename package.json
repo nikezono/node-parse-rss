@@ -1,7 +1,7 @@
 {
   "name": "parse-rss",
   "description": "parse rss feeds",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "nikezono",
   "dependencies": {
     "feedparser": "*",
