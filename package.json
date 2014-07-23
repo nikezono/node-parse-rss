@@ -8,7 +8,7 @@
     "request": "*"
   },
   "devDependencies": {
-    "coffee-script": "*",
+    "coffee-script": "^1.7.1",
     "mocha":"*"
   },
   "keywords": [
@@ -23,7 +23,7 @@
   },
   "main": "./lib/parse-rss.js",
   "scripts": {
-    "test": "./node_modules/.bin/cake test"
+    "test": "cake test"
   },
   "engines": {
     "node": "*"

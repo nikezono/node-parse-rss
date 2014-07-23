@@ -1,13 +1,11 @@
-process.env.NODE_PATH = '/usr/local/lib/node_modules'
-
 cp = require 'child_process'
 
 task 'test','run tests', ->
-    cp.spawn "mocha"
-        ,[ "--compilers","coffee:coffee-script","./test/*.coffee","--reporter","spec"]
+    cp.spawn "./node_modules/.bin/mocha"
+        ,[ "--compilers","coffee:coffee-script/register","./test/*.coffee","--reporter","spec"]
             ,{ stdio: 'inherit' }
 
 task 'compile','compile automate', ->
-  cp.spawn "coffee"
+  cp.spawn "./node_modules/.bin/coffee"
     , [ "-o", "./lib", "-cw", "-b", "./src"]
       ,{ stdio: 'inherit' }
