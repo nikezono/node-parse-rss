@@ -13,17 +13,19 @@ module.exports = (url,callback) ->
 
   rss = []
 
-  request url, (error,res,body)->
-    if error? or res?.statusCode isnt 200
-      return callback "request:#{url}, Error:#{error}",null
-    else
-      request(url).pipe(new FeedParser([options]))
-      .on 'error', (error)->
-        callback error,null
-      .on 'readable', ->
-        stream = this
-        rss.push item  if item = stream.read()
-      .on 'end', ->
-        callback 'no articles',null if rss.length is 0
-        callback null,rss
+  req = request url, (err, res, body) ->
+    if err or res?.statusCode isnt 200
+      return callback "request:#{url}, Error:#{error}"
+
+    req.pipe(new FeedParser([options]))
+    .on 'error', (err)->
+      callback err
+    .on 'readable', ->
+      stream = this
+      if item = stream.read()
+        rss.push item
+    .on 'end', ->
+      if rss.length is 0
+        return callback 'no articles'
+      callback null, rss
 
