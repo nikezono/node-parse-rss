@@ -1,5 +1,5 @@
 node-parse-rss
-[![Build Status](https://travis-ci.org/nikezono/node-parse-rss.png)](https://travis-ci.org/nikezono/node-parse-rss)
+[![Build Status](https://travis-ci.org/nikezono/node-parse-rss.png)](https://travis-ci.org/nikezono/node-parse-rss)[![Coverage Status](https://coveralls.io/repos/nikezono/node-parse-rss/badge.png?branch=master)](https://coveralls.io/r/nikezono/node-parse-rss?branch=master)
 
 ---
 
