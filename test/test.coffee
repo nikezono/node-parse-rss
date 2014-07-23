@@ -3,9 +3,9 @@ path = require 'path'
 assert  = require 'assert'
 
 # test framework
-parser = require path.resolve('lib','parse-rss')
+parser = require '../lib/parse-rss'
 
-apple    = "http://images.apple.com/main/rss/hotnews/hotnews.rss" 
+apple    = "http://images.apple.com/main/rss/hotnews/hotnews.rss"
 shokai    = "http://shokai.org/blog/feed"
 
 describe "Parse", ->
@@ -16,7 +16,7 @@ describe "Parse", ->
       assert.equal err, null
       assert.equal typeof rss[0].title, "string"
       done()
-      
+
   it "AtomがParseできる", (done) ->
     @timeout 5000
     parser shokai, (err,rss) ->

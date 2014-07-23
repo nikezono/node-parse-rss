@@ -4,7 +4,6 @@ module.exports = (url,callback) ->
   FeedParser = require 'feedparser'
   request    = require 'request'
 
-
   # FeedParser Options
   options =
     normalize : false
@@ -13,19 +12,37 @@ module.exports = (url,callback) ->
 
   rss = []
 
-  req = request url, (err, res, body) ->
-    if err or res?.statusCode isnt 200
-      return callback "request:#{url}, Error:#{error}"
+  domain = require('domain').create()
+  domain.on 'error',(e)->
+    return callback e,null
+  domain.run ->
 
-    req.pipe(new FeedParser([options]))
-    .on 'error', (err)->
-      callback err
-    .on 'readable', ->
+    ### Module Initialize ###
+    req = request url
+    feedParser = new FeedParser([options])
+
+    ### REQUEST ###
+    req.on 'error',(err)->
+      return callback err,null
+
+    req.on 'response',(res)->
+      stream = this
+
+      if res.statusCode != 200
+        return this.emit('error', new Error('Bad status code'))
+
+      stream.pipe feedParser
+
+    ### FEEDPARSER ###
+    feedParser.on 'error', (err)->
+      return callback err,null
+
+    feedParser.on 'readable', ->
       stream = this
       if item = stream.read()
         rss.push item
-    .on 'end', ->
+    feedParser.on 'end', ->
       if rss.length is 0
         return callback 'no articles'
-      callback null, rss
+      return callback null, rss
 
